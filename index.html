@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Video</title>
+</head>
+<body>
+	<video src="video.mp4" id="video" autoplay="true"></video>
+	<br>
+	<button id="ler" type="button" class="btn btn-primary">Ler tempo</button>
+	<button id="atribuir" type="button" class="btn btn-primary">Atribuir</button>
+	<script type="text/javascript">
+		function ready(fn) {
+		    if (document.readyState != 'loading'){
+		        fn();
+		    } else {
+		        document.addEventListener('DOMContentLoaded', fn);
+		    }
+		}
+		ready(function(){
+		    var video = document.querySelector('#video');
+		    let ler = document.querySelector('#ler');
+		    let atribuir = document.querySelector('#atribuir');
+		    ler.addEventListener('click', function(){
+			    // lendo o tempo atual
+			    console.log(video.currentTime);
+		    })
+		    atribuir.addEventListener('click', function(){
+			    // configurando um novo tempo
+			    video.currentTime = 3;
+		    })
+		})
+	</script>
+</body>
+</html>
